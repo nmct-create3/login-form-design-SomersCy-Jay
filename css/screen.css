@@ -1,6 +1,19 @@
 /*------------------------------------*\
 #FONTS
+
 \*------------------------------------*/
+@font-face {
+    font-family: 'Inter Web';
+    font-weight: 200;
+    src: url('../fonts/Inter-Regular.woff2') format('woff2');
+    font-display: auto;
+}
+@font-face {
+    font-family: 'Inter Web';
+    font-weight: 400;
+    src: url('../fonts/Inter-SemiBold.woff2') format('woff2');
+    font-display: auto;
+}
 
 /*------------------------------------*\
 #Variables
@@ -25,12 +38,12 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
-    color: grey;
+    font-family: "Inter Web", Helvetica, arial, sans-serif;
+    color: #20223a;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    background-color: #F5F6FA;
 }
 
 *,
@@ -47,13 +60,13 @@ html {
 */
 
 ::-moz-selection {
-    background: HotPink;
+    background: #3385FF;
     color: white;
     text-shadow: none;
 }
 
 ::selection {
-    background: HotPink;
+    background: #3385FF;
     color: white;
     text-shadow: none;
 }
@@ -131,6 +144,11 @@ li ol {
     margin-bottom: 0;
 }
 
+label,
+input{
+    display:block;
+}
+
 blockquote {
     font-style: normal;
     font-size: 23px;
@@ -158,18 +176,18 @@ hr {
 }
 
 a {
-    color: HotPink;
+    color: #3385FF;
     transition: all .1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: HotPink;
+    color: #2e77e6;
 }
 
 a:hover,
 a:focus {
-    color: DeepPink;
+    color: #2e77e6;
 }
 
 /*------------------------------------*\
@@ -400,6 +418,7 @@ a:focus {
 */
 
 .o-button-reset {
+    outline: none;
     border: none;
     margin: 0;
     padding: 0;
@@ -422,6 +441,7 @@ a:focus {
     -webkit-appearance: none;
 }
 
+
 /*------------------------------------*\
 #COMPONENTS
 \*------------------------------------*/
@@ -437,12 +457,40 @@ a:focus {
     ---
     Card with box shadow
 */
+.c-card{
+    background: white;
+    border-radius: 3px;
+    border: 1px solid #0000000d;
+    box-shadow: 0 0 0 1px #00000012
+}
+
+.c-card__body{
+    padding: 48px;
+}
+
+.c-card__title{
+    font-size: 18px;
+    line-height: 21px;
+    margin:auto;
+    width: 50%;
+    padding-top: 48px;
+}
+
+.c-card__footer{
+    border-top: 1px solid #E2E3E7;
+    text-align: center;
+    padding-top: 24px;
+}
 
 /*
     Component: Forms
     ---
     Everything form related here
 */
+.form-field--option{
+    display:flex;
+    align-items: center;
+}
 
 /*
     Component: Input
@@ -450,11 +498,46 @@ a:focus {
     Class to put on all input="text" like form inputs
 */
 
-.c-input {
 
+
+.c-logo{
+    height: 24px;
+    display: flex;
+    justify-content: center;
 }
 
+.c-logo__symbol{
+    height: 100%;
+    display: block;
+}
+
+.c-logo__path--1{
+    fill: #20223a
+}
+.c-logo__path--2{
+    fill: #3385ff
+}
+.c-logo__path--3{
+    fill: #1b4186
+}
+
+.c-input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
+    width:100%;
+   border: 1px solid #e2e3e7;
+   border-radius: 3px;
+   font-family: inherit;
+   color: #B5B6C0;
+   font-size: 16px;
+    line-height: 24px;
+    padding: 11px 12px;
+}
 .c-input:focus {
+    color: inherit;
+    border-color: #3385FF;
+    box-shadow: 0 0 0 3px #3385FF4d;
 }
 
 /*
@@ -464,7 +547,16 @@ a:focus {
 */
 
 .c-label {
+ font-weight: 200;
+ font-size: 14px;
+ line-height: 16px;
+ margin-bottom: 8px;
+ color: #606274;
+}
 
+.c-label--option{
+    color: #606274;
+    margin-left: 8px;
 }
 
 /* If a input is focused within the form-field class change te color of the label */
@@ -479,19 +571,28 @@ a:focus {
     Class to put on form buttons or links
 */
 
-.c-button {
-
+.c-button{
+    width: 100%;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #FFFFFF;
+    background-color: #3385FF;
+    border:1px solid #2E77E6;
+    border-radius: 3px;
+    padding: 13px;
 }
 
 .c-button:hover {
-
+    background-color: #4F95FF;
 }
 
 .c-button:focus {
-
+    box-shadow: 0 0 0 3px #3385FF4d;
 }
 
 .c-button:active {
+    background-color: #2E77E6;
 
 }
 
